@@ -1,5 +1,5 @@
 on run {input, parameters}
-	set newFolders to {"al done", "canon raw", "phase raw", "final files", "jpegs", "processed", "another"}
+	set newFolders to {"al done", "canon raw", "phase raw", "final files", "jpegs", "processed"}
 	repeat with i from 1 to (count of items in newFolders)
 		tell application "Finder"
 			if not (exists folder (item i in newFolders)) then
