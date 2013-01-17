@@ -1,9 +1,8 @@
-on run {input, parameters}
-	set newFolders to {"al done", "canon raw", "phase raw", "final files", "jpegs", "processed"}
-	repeat with i from 1 to (count of items in newFolders)
+on run {projectFolder, parameters}
+	repeat with projectSubFolder in {"al done", "canon raw", "phase raw", "final files", "jpegs", "processed"}
 		tell application "Finder"
-			if not (exists folder (item i in newFolders)) then
-				make new folder at input with properties {name:item i in newFolders}
+			if not (exists projectSubFolder) then
+				make new folder at projectFolder with properties {name:projectSubFolder}
 			end if
 		end tell
 	end repeat
